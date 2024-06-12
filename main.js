@@ -2,12 +2,12 @@ const draggable = document.querySelectorAll("div[draggable='true']");
 const containers = document.querySelectorAll(".container");
 
 draggable.forEach((d) => {
-  d.addEventListener("dragstart", () => d.classList.add("drag"));
-  d.addEventListener("dragend", () => d.classList.remove("drag"));
+  d.addEventListener("touchstart", () => d.classList.add("drag"));
+  d.addEventListener("touchend", () => d.classList.remove("drag"));
 });
 
 containers.forEach((container) => {
-  container.addEventListener("dragover", (e) => {
+  container.addEventListener("touchmove", (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement(container, e.clientY);
 
